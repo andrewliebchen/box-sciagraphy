@@ -1,1 +1,156 @@
 @import "../../node_modules/mathsass/dist/_math.scss";
+
+// General variables
+$rad:   $PI / 180;
+
+// Date/time constants and conversions
+$dayMs: 1000 * 60 * 60 * 24;
+$J1970: 2440588;
+$J2000: 2451545;
+
+@function toJulian($date) {
+  @return $date / $dayMs - 0.5 + $J1970;
+}
+
+@function toDays($date) {
+  @return toJulian($date) - $J2000;
+}
+
+// General calculations for position
+$earth: $rad * 23.4397; // obliquity of the Earth
+
+@function rightAscension($l, $b) {
+  @return atan2(sin($l) * cos($earth) - tan($b) * sin($earth), cos($l));
+}
+
+@function declination($l, $b){
+  @return asin(sin($b) * cos($earth) + cos($b) * sin($earth) * sin($l));
+}
+
+@function azimuth($H, $phi, $dec) {
+  @return atan2(sin($H), cos($H) * sin($phi) - tan($dec) * cos($phi));
+}
+
+@function altitude($H, $phi, $dec) {
+  @return asin(sin($phi) * sin($dec) + cos($phi) * cos($dec) * cos($H));
+}
+
+@function siderealTime($d, $lw) {
+  @return $rad * (280.16 + 360.9856235 * $d) - $lw;
+}
+
+// General sun calculations
+@function solarMeanAnomaly($d) {
+  @return $rad * (357.5291 + 0.98560028 * $d);
+}
+
+@function eclipticLongitude($M) {
+  $C: $rad * (1.9148 * sin($M) + 0.02 * sin(2 * $M) + 0.0003 * sin(3 * $M)); // equation of center
+  $P: $rad * 102.9372; // perihelion of the Earth
+
+  @return $M + $C + $P + $PI;
+}
+
+@function sunCoordsDeclination($d) {
+  @return declination(eclipticLongitude(solarMeanAnomaly($d)), 0);
+}
+
+@function sunCoordsRightAscension($d) {
+  @return rightAscension(eclipticLongitude(solarMeanAnomaly($d)), 0);
+}
+
+// Calculates sun position for a given date and latitude/longitude
+@function getPositionAzimuth($date, $lat, $lng) {
+  $lw:  $rad * -($lng);
+  $phi: $rad * $lat;
+  $d:   toDays($date);
+  $H: siderealTime($d, $lw) - sunCoordsRightAscension($d);
+
+  @return azimuth($H, $phi, sunCoordsDeclination($d));
+}
+
+@function getPositionAltitude($date, $lat, $lng) {
+  $lw:  $rad * -($lng);
+  $phi: $rad * $lat;
+  $d:   toDays($date);
+  $H: siderealTime($d, $lw) - sunCoordsRightAscension($d);
+
+  @return altitude($H, $phi, sunCoordsDeclination($d));
+}
+
+@mixin box-sciagraphy(
+  $date,
+  $lat,
+  $lng,
+  $height
+) {
+  $azimuth:  getPositionAzimuth($date, $lat, $lng);
+  $altitude: getPositionAltitude($date, $lat, $lng);
+
+  @debug $azimuth;
+  @debug $altitude;
+}
+
+////////////////////////////////////////////////////////////////////////////////
+
+// var PI   = Math.PI,
+//     sin  = Math.sin,
+//     cos  = Math.cos,
+//     tan  = Math.tan,
+//     asin = Math.asin,
+//     atan = Math.atan2,
+//     acos = Math.acos,
+//     rad  = PI / 180;
+
+// // general calculations for position
+
+// $earth = rad * 23.4397; // obliquity of the Earth
+
+// function rightAscension(l, b) { return atan2(sin(l) * cos(e) - tan(b) * sin(e), cos(l)); }
+// function declination(l, b)    { return asin(sin(b) * cos(e) + cos(b) * sin(e) * sin(l)); }
+
+// function azimuth(H, phi, dec)  { return atan(sin(H), cos(H) * sin(phi) - tan(dec) * cos(phi)); }
+// function altitude(H, phi, dec) { return asin(sin(phi) * sin(dec) + cos(phi) * cos(dec) * cos(H)); }
+
+// function siderealTime(d, lw) { return rad * (280.16 + 360.9856235 * d) - lw; }
+
+
+// // general sun calculations
+
+// function solarMeanAnomaly(d) { return rad * (357.5291 + 0.98560028 * d); }
+
+// function eclipticLongitude(M) {
+
+//     var C = rad * (1.9148 * sin(M) + 0.02 * sin(2 * M) + 0.0003 * sin(3 * M)), // equation of center
+//         P = rad * 102.9372; // perihelion of the Earth
+
+//     return M + C + P + PI;
+// }
+
+// function sunCoords(d) {
+
+//     var M = solarMeanAnomaly(d),
+//         L = eclipticLongitude(M);
+
+//     return {
+//         dec: declination(L, 0),
+//         ra: rightAscension(L, 0)
+//     };
+// }
+
+// // calculates sun position for a given date and latitude/longitude
+
+// SunCalc.getPosition = function (date, lat, lng) {
+
+//     var lw  = rad * -lng,
+//         phi = rad * lat,
+//         d   = toDays(date),
+
+//         c  = sunCoords(d),
+//         H  = siderealTime(d, lw) - c.ra;
+
+//     return {
+//         azimuth: azimuth(H, phi, c.dec),
+//         altitude: altitude(H, phi, c.dec)
+//     };
+// };
