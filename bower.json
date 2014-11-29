@@ -1,5 +1,8 @@
 {
   "name": "box-sciagraphy",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "jquery": "~1.11.1",
+    "suncalc": "~1.6.0"
+  }
 }

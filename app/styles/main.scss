@@ -1,15 +1,24 @@
-@import "box-sciagraphy";
+// bower:scss
+// endbower
 
 body {
-  background: white;
+  background: #fafafa;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #333;
 }
 
 .box {
-  @include box-sciagraphy(1417168800, 37.386052, -122.083851, 100);
-  width: 100px;
-  height: 100px;
-  margin: 50px;
-  background-color: blue;
+  $size: 100px;
+  height: $size;
+  width: $size;
+  margin: $size;
+  background-color: #0074D9;
+
+  &::before {
+    content: attr(data-azimuth);
+  }
+
+  &::after {
+    content: attr(data-altitude);
+  }
 }
