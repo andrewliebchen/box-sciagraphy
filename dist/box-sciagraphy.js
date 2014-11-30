@@ -55,8 +55,6 @@
       $element.css({
         'box-shadow': boxShadow
       });
-
-      console.log(azimuth + ', ' + altitude);
     });
   };
 })(jQuery, window, document);
