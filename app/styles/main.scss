@@ -1,6 +1,10 @@
 // bower:scss
 // endbower
 
+@import "../../node_modules/mathsass/dist/_math.scss";
+@import "../../node_modules/mathsass/dist/_constants.scss";
+// @import "box-sciagraphy";
+
 body {
   background: #fafafa;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -13,12 +17,5 @@ body {
   width: $size;
   margin: $size;
   background-color: #0074D9;
-
-  &::before {
-    content: attr(data-azimuth);
-  }
-
-  &::after {
-    content: attr(data-altitude);
-  }
+  // @include box-sciagraphy(1417300858, 37.386052, -122.083851, 100);
 }
