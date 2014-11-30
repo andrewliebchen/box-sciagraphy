@@ -1,0 +1,113 @@
+// VARIABLES
+$color-gray-dark:  #333;
+$color-gray-mid:   #999;
+$color-gray-light: #f0f0f0;
+$color-primary:    #0074D9;
+
+$font-family-base:      "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-family-monospace: "Source Code Pro", monospace;
+
+$width-wrapper: 1200px;
+
+// HELPERS
+@mixin clearfix {
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+
+  &:after {
+    clear: both;
+  }
+}
+
+// GENERAL
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  background-color: #f9f9f9;
+  font-family: $font-family-base;
+  color: $color-gray-dark;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+a {
+  color: $color-primary;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+h1 {
+  font-size: 4em;
+  letter-spacing: -0.03em;
+}
+
+p {
+  + p {
+    padding-top: 1em;
+  }
+}
+
+code {
+  font-family: $font-family-monospace;
+}
+
+%width-wrapper,
+.width-wrapper {
+  max-width: $width-wrapper;
+  margin: 0 auto;
+  padding: 0 1em;
+}
+
+%section {
+  padding: 3em 0;
+}
+
+// SPECIFIC
+.hero {
+  @extend %section;
+}
+
+.hero__title {
+  text-align: center;
+}
+
+.examples {
+  @include clearfix;
+}
+
+.example {
+  width: 33%;
+  float: left;
+
+}
+
+.box {
+  $size: 3em;
+  transition: box-shadow 2s ease-out;
+  height: $size;
+  width: $size;
+  margin: $size;
+  background-color: $color-gray-dark;
+  float: left;
+  // border-radius: $size / 2;
+}
+
+.description {
+  @extend %section;
+  background-color: $color-gray-light;
+
+  .width-wrapper {
+    max-width: $width-wrapper / 2;
+  }
+}

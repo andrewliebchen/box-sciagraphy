@@ -15,14 +15,14 @@ module.exports = function (grunt) {
           sourcemap: 'none'
         },
         files: {
-          'stylesheets/main.css': 'stylesheets/main.scss'
+          './src/stylesheets/main.css': './src/stylesheets/main.scss'
         }
       }
     },
 
     autoprefixer: {
       dist: {
-        src: 'stylesheets/main.css' // globbing is also possible here
+        src: './src/stylesheets/main.css' // globbing is also possible here
       }
     },
 
@@ -31,15 +31,16 @@ module.exports = function (grunt) {
         options:{
           cssmin: true
         },
-        src: [ './index.html' ]
+        src: ['./src/index.html'],
+        dest: ['./']
       }
     },
 
     watch: {
       files: [
-        './stylesheets/**/*.scss',
+        './src/stylesheets/main.scss',
         './dist/*.js',
-        './index.html',
+        './src/index.html',
       ],
       tasks: ['sass:dist', 'autoprefixer:dist', 'inline:dist'],
       options: {
