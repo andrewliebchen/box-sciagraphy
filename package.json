@@ -24,7 +24,6 @@
     "grunt-wiredep": "^1.7.0",
     "jshint-stylish": "^0.4.0",
     "load-grunt-tasks": "^0.4.0",
-    "mathsass": "^0.9.5",
     "time-grunt": "^0.4.0"
   },
   "engines": {

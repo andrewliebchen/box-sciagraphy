@@ -3,26 +3,10 @@
 'use strict';
 
 $(document).ready(function(){
-  var $box = $('.box');
-  var time = $box.data('sciagraphy-time') || Date.now();
-  var lat  = $box.data('sciagraphy-lat');
-  var lng  = $box.data('sciagraphy-lng');
-  var height = $box.data('sciagraphy-height');
-
   var PI  = Math.PI;
-  var rad = 180/PI;
-
-  var sunPosition = SunCalc.getPosition(time, lat, lng);
-  var azimuth     = sunPosition.azimuth * rad - 270;
-  var altitude    = 180 - sunPosition.altitude * rad;
-
-  var shadowLength = Math.round(Math.tan(altitude) * height);
+  var RAD = 180 / PI;
 
   function boxSciagraphy(deg, iterations, color, spread) {
-    // Defaults
-    color = color || 'gray';
-    spread = spread || 0;
-
     var n = 0;
     var shadow = '';
     var radius = 0;
@@ -44,9 +28,24 @@ $(document).ready(function(){
     return shadow;
   }
 
-  var boxShadow = boxSciagraphy(azimuth, shadowLength);
+  $('.box').each(function(){
+    var $box   = $(this);
+    var time   = $box.data('sciagraphy-time') || Date.now();
+    var lat    = $box.data('sciagraphy-lat');
+    var lng    = $box.data('sciagraphy-lng');
+    var height = $box.data('sciagraphy-height');
+    var shadowColor  = $box.data('sciagraphy-color') || 'gray';
+    var shadowSpread = $box.data('sciagraphy-spread') || 0;
 
-  $box.css({
-    'box-shadow': boxShadow
+    var sunPosition = SunCalc.getPosition(time, lat, lng);
+    var azimuth     = 180 - sunPosition.azimuth * RAD;
+    var altitude    = 180 - sunPosition.altitude * RAD;
+
+    var shadowLength = Math.round(Math.tan(altitude) * height);
+    var boxShadow = boxSciagraphy(azimuth, shadowLength, shadowColor, shadowSpread);
+
+    $box.css({
+      'box-shadow': boxShadow
+    });
   });
 });
