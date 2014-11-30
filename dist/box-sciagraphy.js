@@ -47,7 +47,7 @@
 
       var sunPosition = SunCalc.getPosition(time, lat, lng);
       var azimuth     = 180 - sunPosition.azimuth * RAD;
-      var altitude    = 180 - sunPosition.altitude * RAD;
+      var altitude    = 90 - Math.abs(sunPosition.altitude * RAD);
 
       var shadowLength = Math.round(Math.tan(altitude) * height);
       var boxShadow = boxSciagraphy(azimuth, shadowLength, settings.shadowColor, settings.shadowSpread);
@@ -55,6 +55,8 @@
       $element.css({
         'box-shadow': boxShadow
       });
+
+      console.log(azimuth + ', ' + altitude);
     });
   };
 })(jQuery, window, document);

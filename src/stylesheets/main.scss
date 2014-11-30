@@ -1,13 +1,17 @@
 // VARIABLES
-$color-gray-dark:  #333;
-$color-gray-mid:   #999;
-$color-gray-light: #f0f0f0;
-$color-primary:    #0074D9;
+$color-gray-dark:    #333;
+$color-gray-mid:     #ccc;
+$color-gray-light:   #f0f0f0;
+$color-primary:      #0074D9;
+$color-primary-dark: #00295a;
+$color-background:   #f9f9f9;
 
 $font-family-base:      "Helvetica Neue", Helvetica, Arial, sans-serif;
 $font-family-monospace: "Source Code Pro", monospace;
 
-$width-wrapper: 1200px;
+$width-wrapper: 600px;
+$radius: 5px;
+$section-padding: 3em;
 
 // HELPERS
 @mixin clearfix {
@@ -31,9 +35,9 @@ $width-wrapper: 1200px;
 
 html,
 body {
-  background-color: #f9f9f9;
-  font-family: $font-family-base;
+  background-color: $color-background;
   color: $color-gray-dark;
+  font-family: $font-family-base;
   font-size: 18px;
   line-height: 1.5;
 }
@@ -48,8 +52,10 @@ a {
 }
 
 h1 {
+  color: $color-gray-mid;
   font-size: 4em;
   letter-spacing: -0.03em;
+  line-height: 1.2;
 }
 
 p {
@@ -58,56 +64,144 @@ p {
   }
 }
 
+pre,
 code {
   font-family: $font-family-monospace;
 }
 
+code {
+  background-color: rgba(black, 0.05);
+  border-radius: 3px;
+  padding: 0 0.25em;
+}
+
 %width-wrapper,
 .width-wrapper {
-  max-width: $width-wrapper;
   margin: 0 auto;
+  max-width: $width-wrapper;
   padding: 0 1em;
 }
 
 %section {
-  padding: 3em 0;
+  padding: $section-padding 0;
 }
 
 // SPECIFIC
 .hero {
   @extend %section;
+
+  .width-wrapper {
+    max-width: $width-wrapper * 1.5;
+  }
 }
 
 .hero__title {
+  margin-bottom: $section-padding * 2;
   text-align: center;
 }
 
 .examples {
   @include clearfix;
+  margin-bottom: 8em;
 }
 
 .example {
-  width: 33%;
   float: left;
+  text-align: center;
+  width: 33%;
+}
 
+.example__description {
+  $border: 1px solid $color-gray-mid;
+  background-color: $color-background;
+  border-radius: $radius;
+  border: $border;
+  color: $color-gray-dark;
+  display: inline-block;
+  line-height: 1.2;
+  margin: 2em 0;
+  padding: 1em;
+  position: relative;
+  text-align: center;
+
+  &::after {
+    $size: 0.8em;
+    $margin: -($size / 2);
+    background-color: inherit;
+    border-bottom: $border;
+    border-right: $border;
+    bottom: 0;
+    content: "";
+    height: $size;
+    left: 50%;
+    margin: 0 0 $margin $margin;
+    position: absolute;
+    transform: rotate(45deg);
+    width: $size;
+  }
 }
 
 .box {
   $size: 3em;
-  transition: box-shadow 2s ease-out;
+  background-color: $color-primary;
+  border-radius: 3px;
   height: $size;
+  margin: 0 auto;
+  transition: box-shadow 2s ease-out;
   width: $size;
-  margin: $size;
-  background-color: $color-gray-dark;
-  float: left;
-  // border-radius: $size / 2;
 }
 
 .description {
   @extend %section;
   background-color: $color-gray-light;
+}
 
-  .width-wrapper {
-    max-width: $width-wrapper / 2;
+.instructions {
+  @extend %section;
+  background-color: $color-primary;
+
+  pre {
+    background-color: $color-primary-dark;
+    border-radius: $radius;
+    color: $color-primary;
+    padding: 1em;
+    text-align: center;
   }
+}
+
+.button {
+  border-radius: $radius;
+  border: 2px solid;
+  color: white;
+  color: white;
+  display: block;
+  font-weight: bold;
+  line-height: 3em;
+  text-align: center;
+
+  &:hover {
+    background-color: white;
+    color: $color-primary;
+    text-decoration: none;
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 4px rgba(white, 0.4);
+    outline: none;
+  }
+}
+
+.or {
+  color: $color-primary-dark;
+  display: block;
+  margin: 1em 0;
+  text-align: center;
+}
+
+
+.footer {
+  @extend %section;
+  background-color: $color-primary-dark;
+  color: $color-gray-mid;
+  text-align: center;
 }

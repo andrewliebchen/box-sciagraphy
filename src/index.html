@@ -14,7 +14,7 @@
   <script src="dist/box-sciagraphy.js"></script>
   <script>
     $(document).ready(function(){
-      $('.box').boxSciagraphy({shadowColor: "#999"});
+      $('.box').boxSciagraphy({shadowColor: "#ccc"});
     });
   </script>
 </head>
@@ -29,38 +29,38 @@
         <div class="examples">
           <div class="example">
             <div class="example__description">
-              <h3>San Francisco</h3>
-              <span>9:00am PST, Winter Solstice</span>
+              <strong>San Francisco</strong><br/>
+              <small>9:00am PST, Winter Solstice</small>
             </div>
             <div class="box"
-              data-sciagraphy-height="50"
-              data-sciagraphy-time="1415966400"
+              data-sciagraphy-height="100"
+              data-sciagraphy-time="1419202620"
               data-sciagraphy-lat="37.386052"
               data-sciagraphy-lng="-122.083851">
             </div>
           </div>
           <div class="example">
             <div class="example__description">
-              <h3>New York City</h3>
-              <span>12:00pm EST, Vernal Equinox</span>
+              <strong>New York City</strong><br/>
+              <small>12:00pm EST, Summer Solstice</small>
             </div>
             <div class="box"
               data-sciagraphy-height="50"
-              data-sciagraphy-time="1415966400"
-              data-sciagraphy-lat="26.715342"
-              data-sciagraphy-lng="-80.053375">
+              data-sciagraphy-time="1419202620"
+              data-sciagraphy-lat="40.712784"
+              data-sciagraphy-lng="-74.005941">
             </div>
           </div>
           <div class="example">
             <div class="example__description">
-              <h3>London</h3>
-              <span>6:00pm GST, Summer Solstice</span>
+              <strong>London</strong><br/>
+              <small>6:00pm GST, Vernal Equinox</small>
             </div>
             <div class="box"
-              data-sciagraphy-height="50"
-              data-sciagraphy-time="1415966400"
-              data-sciagraphy-lat="26.715342"
-              data-sciagraphy-lng="-80.053375">
+              data-sciagraphy-height="100"
+              data-sciagraphy-time="1419202620"
+              data-sciagraphy-lat="51.507351"
+              data-sciagraphy-lng="-0.127758">
             </div>
           </div>
         </div>
@@ -68,13 +68,17 @@
     </section>
     <section class="description">
       <div class="width-wrapper">
-        <p><strong>ski·ag·ra·phy</strong> is the use of shading and the projection of shadows to show perspective in architectural or technical drawing.</p>
+        <p><strong>Scaiagraphy</strong> (<i>ski·ag·ra·phy</i>) is the use of shading and the projection of shadows to show perspective in architectural or technical drawing.</p>
         <p><strong>Box-sciagraphy</strong> is a jQuery plugin that draws long <code>box-shadows</code> that similulate the actual shadows cast by the sun at a particular time at a particular latitude and longitude.</p>
       </div>
     </section>
     <section class="instructions">
-      <div clas="width-wrapper">
-
+      <div class="width-wrapper">
+        <a href="http://www.github.com/andrewliebchen/box-sciagraphy" class="button">Download from Github</a>
+        <span class="or">or</span>
+        <pre>$ npm install box-sciagraphy</pre>
+        <span class="or">or</span>
+        <pre>$ bower install box-sciagraphy</pre>
       </div>
     </section>
     <footer class="footer">
