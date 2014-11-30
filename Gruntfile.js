@@ -17,6 +17,12 @@ module.exports = function (grunt) {
       }
     },
 
+    autoprefixer: {
+      dist: {
+        src: 'stylesheets/main.css' // globbing is also possible here
+      }
+    },
+
     inline: {
       dist: {
         options:{
@@ -32,7 +38,7 @@ module.exports = function (grunt) {
         './dist/*.js',
         './index.html',
       ],
-      tasks: ['sass:dist', 'inline:dist'],
+      tasks: ['sass:dist', 'autoprefixer:dist', 'inline:dist'],
       options: {
         spawn: false,
         livereload: true,
@@ -60,6 +66,7 @@ module.exports = function (grunt) {
 
   grunt.registerTask('default', [
     'sass:dist',
+    'autoprefixer:dist',
     'inline:dist',
     'concurrent'
   ]);
