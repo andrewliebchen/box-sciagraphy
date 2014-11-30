@@ -5,14 +5,14 @@
 
 html,
 body {
-  background-color: #f9f9f9;
-  color: #333;
+  background-color: white;
+  color: #979900;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 18px;
   line-height: 1.5; }
 
 a {
-  color: #0074D9;
+  color: #fcff39;
   text-decoration: none; }
   a:hover {
     text-decoration: underline; }
@@ -22,6 +22,9 @@ h1 {
   font-size: 4em;
   letter-spacing: -0.03em;
   line-height: 1.2; }
+
+h2 {
+  color: #999; }
 
 p + p {
   padding-top: 1em; }
@@ -64,10 +67,10 @@ code {
   width: 33%; }
 
 .example__description {
-  background-color: #f9f9f9;
+  background-color: #fefefe;
   border-radius: 5px;
   border: 1px solid #ccc;
-  color: #333;
+  color: #666;
   display: inline-block;
   line-height: 1.2;
   margin: 2em 0;
@@ -90,8 +93,8 @@ code {
     width: 0.8em; }
 
 .box {
-  background-color: #0074D9;
-  border-radius: 3px;
+  background-color: #666;
+  border-radius: 1px;
   height: 3em;
   margin: 0 auto;
   -webkit-transition: box-shadow 2s ease-out;
@@ -99,41 +102,40 @@ code {
   width: 3em; }
 
 .description {
-  background-color: #f0f0f0; }
+  background-color: #ffffe5; }
 
 .instructions {
-  background-color: #0074D9; }
+  background-color: #fcff39; }
   .instructions pre {
-    background-color: #00295a;
+    background-color: #838600;
     border-radius: 5px;
-    color: #0074D9;
+    color: #fcff39;
     padding: 1em;
     text-align: center; }
 
 .button {
   border-radius: 5px;
   border: 2px solid;
-  color: white;
-  color: white;
+  color: #838600;
   display: block;
   font-weight: bold;
   line-height: 3em;
   text-align: center; }
   .button:hover {
-    background-color: white;
-    color: #0074D9;
+    background-color: #838600;
+    color: #fcff39;
     text-decoration: none; }
   .button:focus {
     box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.4);
     outline: none; }
 
 .or {
-  color: #00295a;
+  color: #979900;
   display: block;
   margin: 1em 0;
   text-align: center; }
 
 .footer {
-  background-color: #00295a;
-  color: #ccc;
+  background-color: #838600;
+  color: #fdff99;
   text-align: center; }
