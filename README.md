@@ -53,4 +53,4 @@ Box-sciagraphy's usefulness is dubious at best. But, if you can think of a compe
 
 ## Contributing
 
-Box-sciagraphy is under tested...I'm pretty sure the math is correct and that it works for all appropriate times and locations. Please submit issues for any problems you may encounter. If you'd like to contribute, feel free to open an issue or pull request. Also, I'd love to hear from you if you use Reacticons in your project!
+Box-sciagraphy is under tested...I'm pretty sure the math is correct and that it works for all appropriate times and locations. Please submit issues for any problems you may encounter. If you'd like to contribute, feel free to open an issue or pull request. Also, I'd love to hear from you if you use Box-sciagraphy in your project!

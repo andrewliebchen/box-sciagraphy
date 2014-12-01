@@ -1,0 +1,119 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'publish' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.32
+4 verbose publish [ '.' ]
+5 verbose cache add [ '.', null ]
+6 verbose cache add name=undefined spec="." args=[".",null]
+7 verbose parsed url { protocol: null,
+7 verbose parsed url   slashes: null,
+7 verbose parsed url   auth: null,
+7 verbose parsed url   host: null,
+7 verbose parsed url   port: null,
+7 verbose parsed url   hostname: null,
+7 verbose parsed url   hash: null,
+7 verbose parsed url   search: null,
+7 verbose parsed url   query: null,
+7 verbose parsed url   pathname: '.',
+7 verbose parsed url   path: '.',
+7 verbose parsed url   href: '.' }
+8 silly lockFile 3a52ce78- .
+9 verbose lock . /Users/andrewliebchen/.npm/3a52ce78-.lock
+10 verbose tar pack [ '/Users/andrewliebchen/.npm/box-sciagraphy/0.0.0/package.tgz',
+10 verbose tar pack   '.' ]
+11 verbose tarball /Users/andrewliebchen/.npm/box-sciagraphy/0.0.0/package.tgz
+12 verbose folder .
+13 info prepublish box-sciagraphy@0.0.0
+14 silly lockFile 1f1177db-tar tar://.
+15 verbose lock tar://. /Users/andrewliebchen/.npm/1f1177db-tar.lock
+16 silly lockFile 25feffba-box-sciagraphy-0-0-0-package-tgz tar:///Users/andrewliebchen/.npm/box-sciagraphy/0.0.0/package.tgz
+17 verbose lock tar:///Users/andrewliebchen/.npm/box-sciagraphy/0.0.0/package.tgz /Users/andrewliebchen/.npm/25feffba-box-sciagraphy-0-0-0-package-tgz.lock
+18 silly lockFile 1f1177db-tar tar://.
+19 silly lockFile 1f1177db-tar tar://.
+20 silly lockFile 25feffba-box-sciagraphy-0-0-0-package-tgz tar:///Users/andrewliebchen/.npm/box-sciagraphy/0.0.0/package.tgz
+21 silly lockFile 25feffba-box-sciagraphy-0-0-0-package-tgz tar:///Users/andrewliebchen/.npm/box-sciagraphy/0.0.0/package.tgz
+22 silly lockFile 07608d2b-npm-box-sciagraphy-0-0-0-package /Users/andrewliebchen/.npm/box-sciagraphy/0.0.0/package
+23 verbose lock /Users/andrewliebchen/.npm/box-sciagraphy/0.0.0/package /Users/andrewliebchen/.npm/07608d2b-npm-box-sciagraphy-0-0-0-package.lock
+24 silly lockFile 07608d2b-npm-box-sciagraphy-0-0-0-package /Users/andrewliebchen/.npm/box-sciagraphy/0.0.0/package
+25 silly lockFile 07608d2b-npm-box-sciagraphy-0-0-0-package /Users/andrewliebchen/.npm/box-sciagraphy/0.0.0/package
+26 silly lockFile 3a52ce78- .
+27 silly lockFile 3a52ce78- .
+28 silly publish { name: 'box-sciagraphy',
+28 silly publish   version: '0.0.0',
+28 silly publish   description: 'Sun-based box-shadows',
+28 silly publish   repository:
+28 silly publish    { type: 'git',
+28 silly publish      url: 'git://github.com/andrewliebchen/box-sciagraphy' },
+28 silly publish   keywords: [ 'jquery', 'sass', 'css', 'sciagraphy' ],
+28 silly publish   contributors: [ { name: 'Andrew Liebchen' } ],
+28 silly publish   license: 'MIT',
+28 silly publish   bugs: { url: 'https://github.com/andrewliebchen/box-sciagraphy/issues' },
+28 silly publish   devDependencies:
+28 silly publish    { 'apache-server-configs': '^2.7.1',
+28 silly publish      grunt: '^0.4.5',
+28 silly publish      'grunt-autoprefixer': '^2.0.0',
+28 silly publish      'grunt-concurrent': '^0.5.0',
+28 silly publish      'grunt-contrib-clean': '^0.6.0',
+28 silly publish      'grunt-contrib-connect': '^0.8.0',
+28 silly publish      'grunt-contrib-copy': '^0.5.0',
+28 silly publish      'grunt-contrib-sass': '^0.8.1',
+28 silly publish      'grunt-contrib-watch': '^0.6.1',
+28 silly publish      'grunt-inline': '^0.3.2',
+28 silly publish      'load-grunt-tasks': '^0.4.0',
+28 silly publish      'time-grunt': '^0.4.0' },
+28 silly publish   engines: { node: '>=0.10.0' },
+28 silly publish   dependencies: { jquery: '^2.1.1', suncalc: '^1.6.0' },
+28 silly publish   readme: '# What is box-sciagraphy?\n\nBox-sciagraphy is a jQuery plugin that draws a long CSS `box-shadow` for an element to simulate a shadow cast by the sun if that element were viewed from above at a particular place and time. This plugin is in part inspired by Google Map\'s [incorrect cast shadows](http://littlebigdetails.com/post/102531877124/google-maps-building-shadows-display-accurately) and [FourShadows.js](https://github.com/Gigacore/four-shadows).\n\nSciagraphy, if you\'re interested, is the use of shading and the projection of shadows to show perspective in architectural or technical drawing. Architects sometimes use sciagraphic studies to determine how much sunlight will strike a building, in addition to creating convincing rendering of a building.\n\n## Using box-sciagraphy in your project\n\nBox-sciagraphy can be included in your project with NPM or Bower, or by downloading [`dist/box-sciagraphy.js`](https://raw.githubusercontent.com/andrewliebchen/box-sciagraphy/master/dist/box-sciagraphy.js) directly.\n\nInstall from NPM:\n```\n$ npm install box-sciagraphy\n```\n\nInstall from Bower:\n```\n$ bower install box-sciagraphy\n```\n\nBox-sciagraphy depends on jQuery and [Suncalc](https://github.com/mourner/suncalc). You\'ll need to include them both in your project:\n\n```\n<script src="path/to/jquery.js"></script>\n<script src="path/to/suncalc.js"></script>\n<script src="path/to/box-sciagraphy.js"></script>\n```\n\nYou\'ll need to define what elements should recieve box-sciagraphy shadows:\n\n```\n$(\'.element\').boxSciagraphy();\n```\n\nOn individual elements, you\'ll need to define an UNIX timestamp, latitude, and longitude. For an element "placed" at 9:00am on December 21, 2014 (Winter Solstice):\n\n```\n<div class="element"\n  data-sciagraphy-height="100"\n  data-sciagraphy-time="1419184800"\n  data-sciagraphy-lat="37.386052"\n  data-sciagraphy-lng="-122.083851"></div>\n```\n\nBoom, shadows. Cool huh? There\'re some good tools out there to help you get the information you\'ll need:\n* [Latitude/Longitude Finder](http://mynasadata.larc.nasa.gov/latitudelongitude-finder/)\n* [UNIX Timestap](http://www.unixtimestamp.com/)\n* [WolframAlpha](http://www.wolframalpha.com/)\n\n## Why is this useful?\n\nBox-sciagraphy\'s usefulness is dubious at best. But, if you can think of a compelling use, I\'d love to hear about it!\n\n## Contributing\n\nBox-sciagraphy is under tested...I\'m pretty sure the math is correct and that it works for all appropriate times and locations. Please submit issues for any problems you may encounter. If you\'d like to contribute, feel free to open an issue or pull request. Also, I\'d love to hear from you if you use Reacticons in your project!\n',
+28 silly publish   readmeFilename: 'README.md',
+28 silly publish   gitHead: 'e688233d45372109bacaa899f0a10f1de8598d49',
+28 silly publish   homepage: 'https://github.com/andrewliebchen/box-sciagraphy',
+28 silly publish   _id: 'box-sciagraphy@0.0.0',
+28 silly publish   scripts: {},
+28 silly publish   _shasum: '72589fadd11fe49d4ac889313107fbdc688cb982',
+28 silly publish   _from: '.' }
+29 verbose request where is /box-sciagraphy
+30 verbose request registry https://registry.npmjs.org/
+31 verbose request id 9946dc56a8341cde
+32 verbose url raw /box-sciagraphy
+33 verbose url resolving [ 'https://registry.npmjs.org/', './box-sciagraphy' ]
+34 verbose url resolved https://registry.npmjs.org/box-sciagraphy
+35 verbose request where is https://registry.npmjs.org/box-sciagraphy
+36 info trying registry request attempt 1 at 16:24:09
+37 http PUT https://registry.npmjs.org/box-sciagraphy
+38 http 403 https://registry.npmjs.org/box-sciagraphy
+39 verbose headers { date: 'Mon, 01 Dec 2014 00:24:10 GMT',
+39 verbose headers   server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+39 verbose headers   'content-type': 'application/json',
+39 verbose headers   'cache-control': 'max-age=60',
+39 verbose headers   'content-length': '6154',
+39 verbose headers   'accept-ranges': 'bytes',
+39 verbose headers   via: '1.1 varnish',
+39 verbose headers   'x-served-by': 'cache-sjc3135-SJC',
+39 verbose headers   'x-cache': 'MISS',
+39 verbose headers   'x-cache-hits': '0',
+39 verbose headers   'x-timer': 'S1417393450.003985,VS0,VE150',
+39 verbose headers   'keep-alive': 'timeout=10, max=50',
+39 verbose headers   connection: 'Keep-Alive' }
+40 error publish Failed PUT 403
+41 error Error: forbidden cannot modify pre-existing version: 0.0.0
+41 error old={"name":"box-sciagraphy","version":"0.0.0","description":"Sun-based box-shadows","repository":{"type":"git","url":"git://github.com/andrewliebchen/box-sciagraphy"},"keywords":["jquery","sass","css","sciagraphy"],"contributors":[{"name":"Andrew Liebchen"}],"license":"MIT","bugs":{"url":"https://github.com/andrewliebchen/box-sciagraphy/issues"},"devDependencies":{"apache-server-configs":"^2.7.1","grunt":"^0.4.5","grunt-autoprefixer":"^2.0.0","grunt-concurrent":"^0.5.0","grunt-contrib-clean":"^0.6.0","grunt-contrib-connect":"^0.8.0","grunt-contrib-copy":"^0.5.0","grunt-contrib-sass":"^0.8.1","grunt-contrib-watch":"^0.6.1","grunt-inline":"^0.3.2","load-grunt-tasks":"^0.4.0","time-grunt":"^0.4.0"},"engines":{"node":">=0.10.0"},"dependencies":{"jquery":"^2.1.1","suncalc":"^1.6.0"},"gitHead":"588c6925a980bf5782cc8cbead8e824a5b99126a","homepage":"https://github.com/andrewliebchen/box-sciagraphy","_id":"box-sciagraphy@0.0.0","scripts":{},"_shasum":"72589fadd11fe49d4ac889313107fbdc688cb982","_from":".","_npmVersion":"1.4.28","_npmUser":{"name":"andrewliebchen","email":"andrewliebchen@gmail.com"},"maintainers":[{"name":"andrewliebchen","email":"andrewliebchen@gmail.com"}],"dist":{"shasum":"72589fadd11fe49d4ac889313107fbdc688cb982","tarball":"http://registry.npmjs.org/box-sciagraphy/-/box-sciagraphy-0.0.0.tgz"}}
+41 error new={"name":"box-sciagraphy","version":"0.0.0","description":"Sun-based box-shadows","repository":{"type":"git","url":"git://github.com/andrewliebchen/box-sciagraphy"},"keywords":["jquery","sass","css","sciagraphy"],"contributors":[{"name":"Andrew Liebchen"}],"license":"MIT","bugs":{"url":"https://github.com/andrewliebchen/box-sciagraphy/issues"},"devDependencies":{"apache-server-configs":"^2.7.1","grunt":"^0.4.5","grunt-autoprefixer":"^2.0.0","grunt-concurrent":"^0.5.0","grunt-contrib-clean":"^0.6.0","grunt-contrib-connect":"^0.8.0","grunt-contrib-copy":"^0.5.0","grunt-contrib-sass":"^0.8.1","grunt-contrib-watch":"^0.6.1","grunt-inline":"^0.3.2","load-grunt-tasks":"^0.4.0","time-grunt":"^0.4.0"},"engines":{"node":">=0.10.0"},"dependencies":{"jquery":"^2.1.1","suncalc":"^1.6.0"},"readme":"# What is box-sciagraphy?\u000a\u000aBox-sciagraphy is a jQuery plugin that draws a long CSS `box-shadow` for an element to simulate a shadow cast by the sun if that element were viewed from above at a particular place and time. This plugin is in part inspired by Google Map's [incorrect cast shadows](http://littlebigdetails.com/post/102531877124/google-maps-building-shadows-display-accurately) and [FourShadows.js](https://github.com/Gigacore/four-shadows).\u000a\u000aSciagraphy, if you're interested, is the use of shading and the projection of shadows to show perspective in architectural or technical drawing. Architects sometimes use sciagraphic studies to determine how much sunlight will strike a building, in addition to creating convincing rendering of a building.\u000a\u000a## Using box-sciagraphy in your project\u000a\u000aBox-sciagraphy can be included in your project with NPM or Bower, or by downloading [`dist/box-sciagraphy.js`](https://raw.githubusercontent.com/andrewliebchen/box-sciagraphy/master/dist/box-sciagraphy.js) directly.\u000a\u000aInstall from NPM:\u000a```\u000a$ npm install box-sciagraphy\u000a```\u000a\u000aInstall from Bower:\u000a```\u000a$ bower install box-sciagraphy\u000a```\u000a\u000aBox-sciagraphy depends on jQuery and [Suncalc](https://github.com/mourner/suncalc). You'll need to include them both in your project:\u000a\u000a```\u000a<script src=\"path/to/jquery.js\"></script>\u000a<script src=\"path/to/suncalc.js\"></script>\u000a<script src=\"path/to/box-sciagraphy.js\"></script>\u000a```\u000a\u000aYou'll need to define what elements should recieve box-sciagraphy shadows:\u000a\u000a```\u000a$('.element').boxSciagraphy();\u000a```\u000a\u000aOn individual elements, you'll need to define an UNIX timestamp, latitude, and longitude. For an element \"placed\" at 9:00am on December 21, 2014 (Winter Solstice):\u000a\u000a```\u000a<div class=\"element\"\u000a  data-sciagraphy-height=\"100\"\u000a  data-sciagraphy-time=\"1419184800\"\u000a  data-sciagraphy-lat=\"37.386052\"\u000a  data-sciagraphy-lng=\"-122.083851\"></div>\u000a```\u000a\u000aBoom, shadows. Cool huh? There're some good tools out there to help you get the information you'll need:\u000a* [Latitude/Longitude Finder](http://mynasadata.larc.nasa.gov/latitudelongitude-finder/)\u000a* [UNIX Timestap](http://www.unixtimestamp.com/)\u000a* [WolframAlpha](http://www.wolframalpha.com/)\u000a\u000a## Why is this useful?\u000a\u000aBox-sciagraphy's usefulness is dubious at best. But, if you can think of a compelling use, I'd love to hear about it!\u000a\u000a## Contributing\u000a\u000aBox-sciagraphy is under tested...I'm pretty sure the math is correct and that it works for all appropriate times and locations. Please submit issues for any problems you may encounter. If you'd like to contribute, feel free to open an issue or pull request. Also, I'd love to hear from you if you use Reacticons in your project!\u000a","readmeFilename":"README.md","gitHead":"e688233d45372109bacaa899f0a10f1de8598d49","homepage":"https://github.com/andrewliebchen/box-sciagraphy","_id":"box-sciagraphy@0.0.0","scripts":{},"_shasum":"72589fadd11fe49d4ac889313107fbdc688cb982","_from":".","_npmVersion":"1.4.28","_npmUser":{"name":"andrewliebchen","email":"andrewliebchen@gmail.com"},"maintainers":[{"name":"andrewliebchen","email":"andrewliebchen@gmail.com"}],"dist":{"shasum":"72589fadd11fe49d4ac889313107fbdc688cb982","tarball":"http://registry.npmjs.org/box-sciagraphy/-/box-sciagraphy-0.0.0.tgz"}}: box-sciagraphy
+41 error     at RegClient.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:308:14)
+41 error     at Request._callback (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:246:65)
+41 error     at Request.self.callback (/usr/local/lib/node_modules/npm/node_modules/request/request.js:236:22)
+41 error     at Request.emit (events.js:98:17)
+41 error     at Request.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1142:14)
+41 error     at Request.emit (events.js:117:20)
+41 error     at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1096:12)
+41 error     at IncomingMessage.emit (events.js:117:20)
+41 error     at _stream_readable.js:943:16
+41 error     at process._tickCallback (node.js:419:13)
+42 error If you need help, you may report this *entire* log,
+42 error including the npm and node versions, at:
+42 error     <http://github.com/npm/npm/issues>
+43 error System Darwin 14.0.0
+44 error command "node" "/usr/local/bin/npm" "publish"
+45 error cwd /Users/andrewliebchen/Sites/box-sciagraphy
+46 error node -v v0.10.32
+47 error npm -v 1.4.28
+48 verbose exit [ 1, true ]

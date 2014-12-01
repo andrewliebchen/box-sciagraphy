@@ -6,6 +6,7 @@
     "type": "git",
     "url": "git://github.com/andrewliebchen/box-sciagraphy"
   },
+  "homepage": "http://andrewliebchen.github.io/box-sciagraphy",
   "keywords": [
     "jquery",
     "sass",
