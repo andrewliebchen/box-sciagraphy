@@ -15,10 +15,10 @@ $ npm install box-sciagraphy
 
 Install from Bower:
 ```
-$ bower instal box-sciagraphy
+$ bower install box-sciagraphy
 ```
 
-Box-sciagraphy depends on jQuery and Suncalc. You'll need to include them both in your project:
+Box-sciagraphy depends on jQuery and [Suncalc](https://github.com/mourner/suncalc). You'll need to include them both in your project:
 
 ```
 <script src="path/to/jquery.js"></script>
