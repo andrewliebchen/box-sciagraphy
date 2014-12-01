@@ -45,9 +45,11 @@ On individual elements, you'll need to define an UNIX timestamp, latitude, and l
 Additionally, there are two global options that you can pass through the `.boxSciagraphy()` function call:
 
 `shadowColor`
+
 String. Any valid CSS color, defaults to `gray`. Determines the color of the cast `box-shadow`. Colors with alpha transparency may give you strange results.
 
 `shadowSpread`
+
 Number. Determines the "fuzziness" of the shadow by adding a blur to the `box-shadow` property.
 
 Cool huh? There're some good tools out there to help you get the information you'll need:
