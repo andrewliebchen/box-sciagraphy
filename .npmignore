@@ -1,0 +1,11 @@
+node_modules/
+bower_components/
+.tmp
+.yo-rc.json
+.jshintrc
+.sass-cache
+
+Gruntfile.js
+src/
+index.html
+bower.json
